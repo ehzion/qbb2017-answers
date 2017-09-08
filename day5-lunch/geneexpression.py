@@ -8,16 +8,28 @@ import matplotlib.pyplot as plt
 df = pd.read_csv(sys.argv[1], sep = "\t")
 soip = df["strand"] == "+"
 soin = df["strand"] == "-"
-coi = ["chr", "p_start", "p_end", "t_name"]
+#coi = ["chr", "p_start", "p_end", "t_name"]
 
-for strand in df["strand"][soip]:
-    df["p_start"] = df["start"] - 500
-    df["p_end"] = df["start"] + 500
-for strand in df["strand"][soin]:
-    df["p_start"] = df["end"] - 500
-    df["p_end"] = df["end"] + 500
+dfp = pd.DataFrame()
+dfn = pd.DataFrame()
 
-num = df._get_numeric_data()
+
+for strand in df[soip]:
+    dfp["chromosome"] = df["chr"][soip]
+    dfp["p_start"] = df["start"][soip] - 500
+    dfp["p_end"] = df["start"][soip] + 500
+    dfp["t_name"] = df["t_name"][soip]
+    
+for strand in df[soin]:
+    dfn["chromosome"] = df["chr"][soin]
+    dfn["p_start"] = df["end"][soin] - 500
+    dfn["p_end"] = df["end"][soin] + 500
+    dfn["t_name"] = df["t_name"][soin]
+
+dfall = dfp.append(dfn)
+
+num = dfall._get_numeric_data()
 num[num<0] = 0
 
-df[coi].to_csv(sys.argv[2], sep ="\t", index = False, header = False)
+
+dfall.to_csv(sys.argv[2], sep ="\t", index = False, header = False)
