@@ -1,0 +1,36 @@
+Commands
+For velvet:
+
+./velveth velvetdata 31 -fastq -separate <filename>.fastq <filename>.fastq
+
+real	0m0.111s
+user	0m0.053s
+sys	0m0.049s
+
+./velvetg velvetdata/
+
+real	0m0.038s
+user	0m0.027s
+sys	0m0.004s
+
+For spades:
+
+spades.py -1 <filename>.fastq -2 <filename>.fastq -o spadesdata
+
+real	0m3.815s
+user	0m4.161s
+sys	0m1.183s
+
+
+
+Sorting for dot plot:
+
+sort -k 1,1 -n <file>
+
+For quast:
+
+quast velvetdata/contigs.fa spadesdata/spadescontigslow.fasta velvetdata2/contigs.fa spadesdata2/contigs.fasta spadesnano/contigs.fasta 
+
+real	0m6.738s
+user	0m5.336s
+sys	0m0.282s
