@@ -1,0 +1,93 @@
+/usr/local/Cellar/quast/4.5/quast.py velvetdata/contigs.fa spadesdata/spadescontigslow.fasta velvetdata2/contigs.fa spadesdata2/contigs.fasta spadesnano/contigs.fasta
+
+Version: 4.5, 15ca3b9
+
+System information:
+  OS: Darwin-16.7.0-x86_64-i386-64bit (macosx)
+  Python version: 2.7.10
+  CPUs number: 4
+
+Started: 2017-09-22 09:04:02
+
+Logging to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/quast.log
+NOTICE: Maximum number of threads is set to 1 (use --threads option to set it manually)
+
+CWD: /Users/cmdb/qbb2017-answers/Week2
+Main parameters: 
+  Threads: 1, minimum contig length: 500, ambiguity: one, threshold for extensive misassembly size: 1000
+
+Contigs:
+  Pre-processing...
+  1  velvetdata/contigs.fa ==> velvetdata_contigs
+  2  spadesdata/spadescontigslow.fasta ==> spadescontigslow
+  3  velvetdata2/contigs.fa ==> velvetdata2_contigs
+  4  spadesdata2/contigs.fasta ==> spadesdata2_contigs
+  5  spadesnano/contigs.fasta ==> spadesnano_contigs
+
+2017-09-22 09:04:02
+Running Basic statistics processor...
+  Contig files: 
+    1  velvetdata_contigs
+    2  spadescontigslow
+    3  velvetdata2_contigs
+    4  spadesdata2_contigs
+    5  spadesnano_contigs
+  Calculating N50 and L50...
+    1  velvetdata_contigs, N50 = 632, L50 = 5, Total length = 7243, GC % = 50.71, # N's per 100 kbp =  0.00
+    2  spadescontigslow, N50 = 718, L50 = 8, Total length = 15922, GC % = 51.21, # N's per 100 kbp =  0.00
+    3  velvetdata2_contigs, N50 = 19911, L50 = 2, Total length = 99562, GC % = 52.58, # N's per 100 kbp =  0.00
+    4  spadesdata2_contigs, N50 = 100000, L50 = 1, Total length = 100000, GC % = 52.59, # N's per 100 kbp =  0.00
+    5  spadesnano_contigs, N50 = 3698, L50 = 6, Total length = 61012, GC % = 52.37, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/Nx_plot.pdf
+  Drawing cumulative plot...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/GC_content_plot.pdf
+  Drawing velvetdata_contigs GC content plot...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/velvetdata_contigs_GC_content_plot.pdf
+  Drawing spadescontigslow GC content plot...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/spadescontigslow_GC_content_plot.pdf
+  Drawing velvetdata2_contigs GC content plot...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/velvetdata2_contigs_GC_content_plot.pdf
+  Drawing spadesdata2_contigs GC content plot...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/spadesdata2_contigs_GC_content_plot.pdf
+  Drawing spadesnano_contigs GC content plot...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/spadesnano_contigs_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 1x)...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/coverage_histogram.pdf
+  Drawing velvetdata_contigs coverage histogram (bin size: 1x)...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/velvetdata_contigs_coverage_histogram.pdf
+  Drawing spadescontigslow coverage histogram (bin size: 1x)...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/spadescontigslow_coverage_histogram.pdf
+  Drawing velvetdata2_contigs coverage histogram (bin size: 7x)...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/velvetdata2_contigs_coverage_histogram.pdf
+  Drawing spadesdata2_contigs coverage histogram (bin size: 1x)...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/spadesdata2_contigs_coverage_histogram.pdf
+  Drawing spadesnano_contigs coverage histogram (bin size: 1x)...
+    saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/basic_stats/spadesnano_contigs_coverage_histogram.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding option to enable it.
+
+2017-09-22 09:04:06
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2017-09-22 09:04:08
+RESULTS:
+  Text versions of total report are saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/report.html
+  PDF version (tables and plots) is saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/report.pdf
+  Icarus (contig browser) is saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/icarus.html
+  Log saved to /Users/cmdb/qbb2017-answers/Week2/quast_results/results_2017_09_22_09_04_02/quast.log
+
+Finished: 2017-09-22 09:04:08
+Elapsed time: 0:00:06.372630
+NOTICEs: 2; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
