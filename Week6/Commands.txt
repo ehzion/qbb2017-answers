@@ -1,0 +1,32 @@
+
+## Build Index
+Bowtie2-build chr19.fa chr19index
+
+## Alignment
+bowtie2 -x chr19index CTCF_ER4.fastq -S CTCF_ER4_align.sam
+bowtie2 -x chr19index CTCF_G1E.fastq -S CTCF_G1E_align.sam
+bowtie2 -x chr19index input_ER4.fastq -S input_ER4_align.sam
+bowtie2 -x chr19index input_G1E.fastq -S input_G1E_align.sam
+
+## Call Peaks
+macs2 callpeak -c input_ER4_align.sam -t CTCF_ER4_align.sam -g 61431566  --outdir macs_ER4 
+macs2 callpeak -c input_G1E_align.sam -t CTCF_G1E_align.sam -g 61431566  --outdir macs_G1E 
+macs2 callpeak -t CTCF_ER4_align.sam -g 61431566  --outdir macs_ER4_nc
+macs2 callpeak -t CTCF_G1E_align.sam -g 61431566  --outdir macs_G1E_nc 
+
+## Find Peaks
+bedtools intersect -a macs_ER4/NA_peaks.narrowPeak -b macs_G1E/NA_peaks.narrowPeak -v > diffbindgain.bed
+bedtools intersect -a macs_G1E/NA_peaks.narrowPeak -b macs_ER4/NA_peaks.narrowPeak -v > diffbindloss.bed
+
+## Top 100
+cat diffbindgain.bed | head -n 100 > diffbindgain100.bed
+cat diffbindloss.bed | head -n 100 > diffbindloss100.bed
+
+## Motif Sequences
+bedtools getfasta -fi chr19.fa -bed macs_ER4/NA_peaks.narrowPeak -fo macsER4.fasta
+bedtools getfasta -fi chr19.fa -bed macs_G1E/NA_peaks.narrowPeak -fo macsG1E.fasta
+
+cat macsER4.fasta macsG1E.fasta > macssequences.fasta
+
+## Meme-Chip
+/usr/local/opt/meme/bin/meme-chip -db motif_databases macssequences.fasta 
